@@ -1,0 +1,9 @@
+[pre_model_sync]
+# Patches added in this section will be executed before doctypes are migrated
+# Read docs to understand patches: https://frappeframework.com/docs/v14/user/en/database-migrations
+cecypo_bank_integrations.patches.fix_dtb_ipn_date_formats
+
+[post_model_sync]
+# Patches added in this section will be executed after doctypes are migrated
+cecypo_bank_integrations.patches.create_kcb_mpesa_mode_of_payment
+cecypo_bank_integrations.patches.set_sms_backfill_default

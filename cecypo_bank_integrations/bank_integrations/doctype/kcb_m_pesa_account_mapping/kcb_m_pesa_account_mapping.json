@@ -1,0 +1,48 @@
+{
+	"actions": [],
+	"creation": "2026-07-05 00:00:00.000000",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"till_or_account_identifier",
+		"company",
+		"bank_account"
+	],
+	"fields": [
+		{
+			"fieldname": "till_or_account_identifier",
+			"fieldtype": "Data",
+			"in_list_view": 1,
+			"label": "Till / Account Identifier",
+			"reqd": 1
+		},
+		{
+			"fieldname": "company",
+			"fieldtype": "Link",
+			"in_list_view": 1,
+			"label": "Company",
+			"options": "Company",
+			"reqd": 1
+		},
+		{
+			"fieldname": "bank_account",
+			"fieldtype": "Link",
+			"in_list_view": 1,
+			"label": "CoA Account (Bank)",
+			"link_filters": "[[\"Account\",\"account_type\",\"=\",\"Bank\"]]",
+			"options": "Account",
+			"reqd": 1
+		}
+	],
+	"istable": 1,
+	"links": [],
+	"modified": "2026-07-05 00:00:00.000000",
+	"modified_by": "Administrator",
+	"module": "Bank Integrations",
+	"name": "KCB M-Pesa Account Mapping",
+	"owner": "Administrator",
+	"permissions": [],
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"states": []
+}

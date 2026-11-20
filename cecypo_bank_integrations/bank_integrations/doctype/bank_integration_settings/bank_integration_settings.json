@@ -1,0 +1,241 @@
+{
+	"actions": [],
+	"creation": "2026-04-16 00:00:00.000000",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"section_im_bank",
+		"validation_mode",
+		"im_bank_account_mappings",
+		"im_bank_payment_type_mappings",
+		"section_dtb",
+		"dtb_account_mappings",
+		"dtb_cbs_module_mappings",
+		"section_kcb_mpesa",
+		"kcb_mpesa_enabled",
+		"environment",
+		"column_break_kcb_1",
+		"client_id",
+		"client_secret",
+		"api_key",
+		"column_break_kcb_2",
+		"uat_base_url",
+		"production_base_url",
+		"section_kcb_stk",
+		"org_short_code",
+		"org_pass_key",
+		"shared_short_code",
+		"column_break_kcb_3",
+		"route_code",
+		"stk_callback_url",
+		"section_kcb_security",
+		"kcb_public_key",
+		"section_kcb_mappings",
+		"kcb_mpesa_account_mappings",
+		"section_sms",
+		"sms_enabled",
+		"sms_extra_senders",
+		"sms_backfill_days"
+	],
+	"fields": [
+		{
+			"fieldname": "section_im_bank",
+			"fieldtype": "Tab Break",
+			"label": "I&M Bank"
+		},
+		{
+			"default": "Non-strict",
+			"description": "<b>Strict</b> – customerRef must exist as a Customer record; payment is rejected if not found.<br><b>Non-strict</b> – customerRef is stored as a reference only; payment is always accepted.",
+			"fieldname": "validation_mode",
+			"fieldtype": "Select",
+			"label": "Customer Ref Validation Mode",
+			"options": "Non-strict\nStrict"
+		},
+		{
+			"fieldname": "im_bank_account_mappings",
+			"fieldtype": "Table",
+			"label": "Account Mappings",
+			"options": "IM Bank Account Mapping"
+		},
+		{
+			"fieldname": "im_bank_payment_type_mappings",
+			"fieldtype": "Table",
+			"label": "Payment Type \u2192 Mode of Payment",
+			"options": "IM Bank Payment Type Mapping"
+		},
+		{
+			"fieldname": "section_dtb",
+			"fieldtype": "Tab Break",
+			"label": "DTB"
+		},
+		{
+			"fieldname": "dtb_account_mappings",
+			"fieldtype": "Table",
+			"label": "Account Mappings",
+			"options": "DTB Account Mapping"
+		},
+		{
+			"fieldname": "dtb_cbs_module_mappings",
+			"fieldtype": "Table",
+			"label": "CBS Module \u2192 Mode of Payment",
+			"options": "DTB CBS Module Mapping"
+		},
+		{
+			"fieldname": "section_kcb_mpesa",
+			"fieldtype": "Tab Break",
+			"label": "KCB M-Pesa"
+		},
+		{
+			"default": "1",
+			"fieldname": "kcb_mpesa_enabled",
+			"fieldtype": "Check",
+			"label": "KCB M-Pesa Enabled"
+		},
+		{
+			"default": "UAT",
+			"fieldname": "environment",
+			"fieldtype": "Select",
+			"label": "Environment",
+			"options": "UAT\nProduction"
+		},
+		{
+			"fieldname": "column_break_kcb_1",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "client_id",
+			"fieldtype": "Data",
+			"label": "Client ID"
+		},
+		{
+			"fieldname": "client_secret",
+			"fieldtype": "Password",
+			"label": "Client Secret"
+		},
+		{
+			"fieldname": "api_key",
+			"fieldtype": "Password",
+			"label": "API Key"
+		},
+		{
+			"fieldname": "column_break_kcb_2",
+			"fieldtype": "Column Break"
+		},
+		{
+			"default": "https://uat.buni.kcbgroup.com",
+			"fieldname": "uat_base_url",
+			"fieldtype": "Data",
+			"label": "UAT Base URL"
+		},
+		{
+			"fieldname": "production_base_url",
+			"fieldtype": "Data",
+			"label": "Production Base URL"
+		},
+		{
+			"fieldname": "section_kcb_stk",
+			"fieldtype": "Section Break",
+			"label": "STK Push"
+		},
+		{
+			"fieldname": "org_short_code",
+			"fieldtype": "Data",
+			"label": "Org Short Code"
+		},
+		{
+			"fieldname": "org_pass_key",
+			"fieldtype": "Password",
+			"label": "Org Pass Key"
+		},
+		{
+			"default": "1",
+			"fieldname": "shared_short_code",
+			"fieldtype": "Check",
+			"label": "Shared Short Code"
+		},
+		{
+			"fieldname": "column_break_kcb_3",
+			"fieldtype": "Column Break"
+		},
+		{
+			"default": "207",
+			"fieldname": "route_code",
+			"fieldtype": "Data",
+			"label": "Route Code"
+		},
+		{
+			"fieldname": "stk_callback_url",
+			"fieldtype": "Data",
+			"label": "STK Callback URL"
+		},
+		{
+			"fieldname": "section_kcb_security",
+			"fieldtype": "Section Break",
+			"label": "Security"
+		},
+		{
+			"fieldname": "kcb_public_key",
+			"fieldtype": "Long Text",
+			"label": "KCB Public Key (PEM)"
+		},
+		{
+			"fieldname": "section_kcb_mappings",
+			"fieldtype": "Section Break",
+			"label": "Account Mappings"
+		},
+		{
+			"fieldname": "kcb_mpesa_account_mappings",
+			"fieldtype": "Table",
+			"label": "KCB M-Pesa Account Mappings",
+			"options": "KCB M-Pesa Account Mapping"
+		},
+		{
+			"fieldname": "section_sms",
+			"fieldtype": "Tab Break",
+			"label": "SMS"
+		},
+		{
+			"fieldname": "sms_enabled",
+			"fieldtype": "Check",
+			"label": "Enable SMS Payments",
+			"default": "0"
+		},
+		{
+			"fieldname": "sms_extra_senders",
+			"fieldtype": "Small Text",
+			"label": "Extra Watched Senders",
+			"description": "One sender per line, in addition to the senders of enabled SMS Rules."
+		},
+		{
+			"fieldname": "sms_backfill_days",
+			"fieldtype": "Int",
+			"label": "Backfill Days",
+			"default": "3"
+		}
+	],
+	"issingle": 1,
+	"links": [],
+	"modified": "2026-07-05 18:00:00.000000",
+	"modified_by": "Administrator",
+	"module": "Bank Integrations",
+	"name": "Bank Integration Settings",
+	"owner": "Administrator",
+	"permissions": [
+		{
+			"create": 1,
+			"delete": 1,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "System Manager",
+			"share": 1,
+			"write": 1
+		}
+	],
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"states": [],
+	"track_changes": 1
+}

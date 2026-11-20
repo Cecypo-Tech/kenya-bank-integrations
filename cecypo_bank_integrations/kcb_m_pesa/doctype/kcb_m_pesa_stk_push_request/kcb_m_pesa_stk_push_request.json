@@ -1,0 +1,248 @@
+{
+	"actions": [],
+	"allow_rename": 0,
+	"autoname": "KCB-STK-.YYYY.-.#####",
+	"creation": "2026-07-05 00:00:00.000000",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"section_stk",
+		"status",
+		"phone_number",
+		"amount",
+		"currency",
+		"column_break_stk_1",
+		"invoice_number",
+		"transaction_description",
+		"message_id",
+		"section_stk_kcb",
+		"merchant_request_id",
+		"checkout_request_id",
+		"column_break_stk_2",
+		"customer_message",
+		"response_code",
+		"response_description",
+		"section_stk_party",
+		"party_type",
+		"party",
+		"column_break_stk_3",
+		"company",
+		"linked_ipn_transaction",
+		"section_stk_timing",
+		"initiated_at",
+		"completed_at",
+		"section_stk_raw",
+		"raw_request",
+		"raw_response",
+		"callback_payload"
+	],
+	"fields": [
+		{
+			"fieldname": "section_stk",
+			"fieldtype": "Section Break",
+			"label": "STK Push"
+		},
+		{
+			"default": "Initiated",
+			"fieldname": "status",
+			"fieldtype": "Select",
+			"in_list_view": 1,
+			"in_standard_filter": 1,
+			"label": "Status",
+			"options": "Initiated\nPending\nSuccess\nFailed\nTimed Out",
+			"read_only": 1,
+			"reqd": 1
+		},
+		{
+			"fieldname": "phone_number",
+			"fieldtype": "Data",
+			"in_list_view": 1,
+			"label": "Phone Number",
+			"length": 12,
+			"reqd": 1
+		},
+		{
+			"fieldname": "amount",
+			"fieldtype": "Currency",
+			"in_list_view": 1,
+			"label": "Amount",
+			"reqd": 1
+		},
+		{
+			"default": "KES",
+			"fieldname": "currency",
+			"fieldtype": "Link",
+			"label": "Currency",
+			"options": "Currency",
+			"reqd": 1
+		},
+		{
+			"fieldname": "column_break_stk_1",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "invoice_number",
+			"fieldtype": "Data",
+			"label": "Invoice Number",
+			"length": 24,
+			"reqd": 1
+		},
+		{
+			"fieldname": "transaction_description",
+			"fieldtype": "Data",
+			"label": "Transaction Description",
+			"length": 13,
+			"reqd": 1
+		},
+		{
+			"fieldname": "message_id",
+			"fieldtype": "Data",
+			"label": "Message ID",
+			"length": 32,
+			"reqd": 1,
+			"unique": 1
+		},
+		{
+			"collapsible": 1,
+			"fieldname": "section_stk_kcb",
+			"fieldtype": "Section Break",
+			"label": "KCB Response"
+		},
+		{
+			"fieldname": "merchant_request_id",
+			"fieldtype": "Data",
+			"label": "Merchant Request ID",
+			"read_only": 1
+		},
+		{
+			"fieldname": "checkout_request_id",
+			"fieldtype": "Data",
+			"in_standard_filter": 1,
+			"label": "Checkout Request ID",
+			"read_only": 1
+		},
+		{
+			"fieldname": "column_break_stk_2",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "customer_message",
+			"fieldtype": "Data",
+			"label": "Customer Message",
+			"read_only": 1
+		},
+		{
+			"fieldname": "response_code",
+			"fieldtype": "Data",
+			"label": "Response Code",
+			"read_only": 1
+		},
+		{
+			"fieldname": "response_description",
+			"fieldtype": "Data",
+			"label": "Response Description",
+			"read_only": 1
+		},
+		{
+			"fieldname": "section_stk_party",
+			"fieldtype": "Section Break",
+			"label": "Party & Company"
+		},
+		{
+			"fieldname": "party_type",
+			"fieldtype": "Select",
+			"label": "Party Type",
+			"options": "\nCustomer\nSupplier"
+		},
+		{
+			"fieldname": "party",
+			"fieldtype": "Dynamic Link",
+			"label": "Party",
+			"options": "party_type"
+		},
+		{
+			"fieldname": "column_break_stk_3",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "company",
+			"fieldtype": "Link",
+			"label": "Company",
+			"options": "Company",
+			"reqd": 1
+		},
+		{
+			"fieldname": "linked_ipn_transaction",
+			"fieldtype": "Link",
+			"label": "Linked IPN Transaction",
+			"options": "KCB M-Pesa IPN Transaction",
+			"read_only": 1
+		},
+		{
+			"fieldname": "section_stk_timing",
+			"fieldtype": "Section Break",
+			"label": "Timing"
+		},
+		{
+			"fieldname": "initiated_at",
+			"fieldtype": "Datetime",
+			"label": "Initiated At",
+			"read_only": 1
+		},
+		{
+			"fieldname": "completed_at",
+			"fieldtype": "Datetime",
+			"label": "Completed At",
+			"read_only": 1
+		},
+		{
+			"collapsible": 1,
+			"fieldname": "section_stk_raw",
+			"fieldtype": "Section Break",
+			"label": "Raw Payloads"
+		},
+		{
+			"fieldname": "raw_request",
+			"fieldtype": "Long Text",
+			"label": "Raw Request",
+			"read_only": 1
+		},
+		{
+			"fieldname": "raw_response",
+			"fieldtype": "Long Text",
+			"label": "Raw Response",
+			"read_only": 1
+		},
+		{
+			"fieldname": "callback_payload",
+			"fieldtype": "Long Text",
+			"label": "Callback Payload",
+			"read_only": 1
+		}
+	],
+	"is_submittable": 0,
+	"links": [],
+	"modified": "2026-07-05 00:00:00.000000",
+	"modified_by": "Administrator",
+	"module": "KCB M-Pesa",
+	"name": "KCB M-Pesa STK Push Request",
+	"owner": "Administrator",
+	"permissions": [
+		{
+			"create": 1,
+			"delete": 1,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "System Manager",
+			"share": 1,
+			"write": 1
+		}
+	],
+	"row_format": "Dynamic",
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"states": []
+}

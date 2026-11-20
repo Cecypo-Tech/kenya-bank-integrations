@@ -1,0 +1,199 @@
+{
+ "app": "cecypo_bank_integrations",
+ "charts": [],
+ "content": "[{\"id\":\"hdr1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h2\\\">Bank Integrations</span>\",\"col\":12}},{\"id\":\"sc_sms_register\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"SMS Payment Register\",\"col\":4}},{\"id\":\"sc_sms_log\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"SMS Log\",\"col\":4}},{\"id\":\"spc1\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"ph_txn\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Transactions</span>\",\"col\":12}},{\"id\":\"sc_im_txn\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"IM Bank Transaction\",\"col\":4}},{\"id\":\"sc_dtb_txn\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"DTB IPN Transaction\",\"col\":4}},{\"id\":\"sc_kcb_txn\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"KCB M-Pesa IPN Transaction\",\"col\":4}},{\"id\":\"spc2\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"card_txns\",\"type\":\"card\",\"data\":{\"card_name\":\"Transactions\",\"col\":4}},{\"id\":\"card_cfg\",\"type\":\"card\",\"data\":{\"card_name\":\"Configuration\",\"col\":4}},{\"id\":\"card_sms\",\"type\":\"card\",\"data\":{\"card_name\":\"SMS Payments\",\"col\":4}}]",
+ "creation": "2026-03-17 00:00:00.000000",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "landmark",
+ "idx": 0,
+ "indicator_color": "blue",
+ "is_hidden": 0,
+ "label": "Bank Integrations",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Transactions",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "IM Bank Transaction",
+   "link_count": 0,
+   "link_to": "IM Bank Transaction",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "DTB IPN Transaction",
+   "link_count": 0,
+   "link_to": "DTB IPN Transaction",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "KCB M-Pesa IPN Transaction",
+   "link_count": 0,
+   "link_to": "KCB M-Pesa IPN Transaction",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Configuration",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Bank Integration Settings",
+   "link_count": 0,
+   "link_to": "Bank Integration Settings",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "SMS Payments",
+   "link_count": 5,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "SMS Payment Register",
+   "link_count": 0,
+   "link_to": "SMS Payment Register",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "SMS Log",
+   "link_count": 0,
+   "link_to": "SMS Log",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "SMS Rule",
+   "link_count": 0,
+   "link_to": "SMS Rule",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "SMS Party Rule",
+   "link_count": 0,
+   "link_to": "SMS Party Rule",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "SMS Device",
+   "link_count": 0,
+   "link_to": "SMS Device",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-11-15 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Cecypo Bank Integrations",
+ "name": "Bank Integrations",
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 51.0,
+ "shortcuts": [
+  {
+   "color": "Orange",
+   "doc_view": "List",
+   "format": "{} To Post",
+   "label": "SMS Payment Register",
+   "link_to": "SMS Payment Register",
+   "stats_filter": "{\"docstatus\":0}",
+   "type": "DocType"
+  },
+  {
+   "color": "Red",
+   "doc_view": "List",
+   "format": "{} Unmatched",
+   "label": "SMS Log",
+   "link_to": "SMS Log",
+   "stats_filter": "{\"status\":\"Unmatched\"}",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "label": "IM Bank Transaction",
+   "link_to": "IM Bank Transaction",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "label": "DTB IPN Transaction",
+   "link_to": "DTB IPN Transaction",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "label": "KCB M-Pesa IPN Transaction",
+   "link_to": "KCB M-Pesa IPN Transaction",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "",
+   "label": "Bank Integration Settings",
+   "link_to": "Bank Integration Settings",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Bank Integrations",
+ "type": "Workspace"
+}

@@ -1,0 +1,417 @@
+{
+	"actions": [],
+	"allow_rename": 0,
+	"autoname": "DTB-IPN-.YYYY.-.#####",
+	"creation": "2026-03-17 00:00:00.000000",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"section_erpnext",
+		"company",
+		"account",
+		"column_break_erp_1",
+		"mode_of_payment",
+		"customer",
+		"supplier",
+		"column_break_erp_2",
+		"payment_entry",
+		"submit_payment",
+		"is_internal_transfer",
+		"paid_from",
+		"paid_to",
+		"amended_from",
+		"section_transaction",
+		"xref",
+		"user_reference",
+		"column_break_top_1",
+		"status",
+		"debit_credit_indicator",
+		"column_break_top_2",
+		"reversal_indicator",
+		"amount",
+		"section_core",
+		"account_number",
+		"branch_code",
+		"currency",
+		"column_break_core_1",
+		"cbs_reference",
+		"cbs_module",
+		"financial_year",
+		"column_break_core_2",
+		"serial_number",
+		"transaction_code",
+		"transaction_description",
+		"section_dates",
+		"transaction_date",
+		"value_date",
+		"column_break_dates_1",
+		"exchange_rate",
+		"available_balance",
+		"section_customer",
+		"customer_name",
+		"customer_mobile",
+		"column_break_cust_1",
+		"virtual_pan",
+		"rrn",
+		"section_narration",
+		"narration"
+	],
+	"fields": [
+		{
+			"fieldname": "xref",
+			"fieldtype": "Data",
+			"in_list_view": 1,
+			"label": "XREF",
+			"length": 32,
+			"read_only": 1,
+			"reqd": 1,
+			"unique": 1
+		},
+		{
+			"fieldname": "user_reference",
+			"fieldtype": "Data",
+			"in_list_view": 1,
+			"label": "User Reference",
+			"length": 32,
+			"read_only": 1
+		},
+		{
+			"default": "Pending",
+			"fieldname": "status",
+			"fieldtype": "Select",
+			"in_list_view": 1,
+			"in_standard_filter": 1,
+			"label": "Status",
+			"options": "Pending\nProcessed\nFailed",
+			"read_only": 1
+		},
+		{
+			"fieldname": "section_transaction",
+			"fieldtype": "Section Break",
+			"label": "Transaction"
+		},
+		{
+			"fieldname": "column_break_top_1",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "column_break_top_2",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "debit_credit_indicator",
+			"fieldtype": "Select",
+			"in_list_view": 1,
+			"in_standard_filter": 1,
+			"label": "Debit/Credit",
+			"options": "\nD\nC",
+			"read_only": 1,
+			"reqd": 1
+		},
+		{
+			"fieldname": "reversal_indicator",
+			"fieldtype": "Select",
+			"label": "Reversal",
+			"options": "\ny\nn",
+			"read_only": 1,
+			"reqd": 1
+		},
+		{
+			"fieldname": "amount",
+			"fieldtype": "Currency",
+			"in_list_view": 1,
+			"label": "Amount",
+			"read_only": 1,
+			"reqd": 1
+		},
+		{
+			"fieldname": "section_erpnext",
+			"fieldtype": "Section Break",
+			"label": "ERPNext"
+		},
+		{
+			"fieldname": "company",
+			"fieldtype": "Link",
+			"in_standard_filter": 1,
+			"label": "Company",
+			"options": "Company",
+			"read_only": 1
+		},
+		{
+			"fieldname": "account",
+			"fieldtype": "Link",
+			"label": "CoA Account (Bank)",
+			"link_filters": "[[\"Account\",\"account_type\",\"=\",\"Bank\"]]",
+			"options": "Account",
+			"read_only": 1
+		},
+		{
+			"fieldname": "mode_of_payment",
+			"fieldtype": "Link",
+			"label": "Mode of Payment",
+			"options": "Mode of Payment"
+		},
+		{
+			"depends_on": "eval:doc.debit_credit_indicator=='C' && !doc.is_internal_transfer",
+			"fieldname": "customer",
+			"fieldtype": "Link",
+			"label": "Customer",
+			"options": "Customer"
+		},
+		{
+			"depends_on": "eval:doc.debit_credit_indicator=='D' && !doc.is_internal_transfer",
+			"fieldname": "supplier",
+			"fieldtype": "Link",
+			"label": "Supplier",
+			"options": "Supplier"
+		},
+		{
+			"fieldname": "column_break_erp_1",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "column_break_erp_2",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "payment_entry",
+			"fieldtype": "Link",
+			"label": "Payment Entry",
+			"options": "Payment Entry"
+		},
+		{
+			"default": "0",
+			"fieldname": "submit_payment",
+			"fieldtype": "Check",
+			"label": "Auto-Submit Payment Entry"
+		},
+		{
+			"default": "0",
+			"fieldname": "is_internal_transfer",
+			"fieldtype": "Check",
+			"label": "Is Internal Transfer"
+		},
+		{
+			"depends_on": "eval:doc.is_internal_transfer",
+			"fieldname": "paid_from",
+			"fieldtype": "Link",
+			"label": "Paid From",
+			"options": "Account"
+		},
+		{
+			"depends_on": "eval:doc.is_internal_transfer",
+			"fieldname": "paid_to",
+			"fieldtype": "Link",
+			"label": "Paid To",
+			"options": "Account"
+		},
+		{
+			"fieldname": "amended_from",
+			"fieldtype": "Link",
+			"label": "Amended From",
+			"no_copy": 1,
+			"options": "DTB IPN Transaction",
+			"print_hide": 1,
+			"read_only": 1,
+			"search_index": 1
+		},
+		{
+			"collapsible": 0,
+			"fieldname": "section_core",
+			"fieldtype": "Section Break",
+			"label": "Core Banking Details"
+		},
+		{
+			"fieldname": "account_number",
+			"fieldtype": "Data",
+			"label": "Account Number",
+			"read_only": 1,
+			"reqd": 1
+		},
+		{
+			"fieldname": "branch_code",
+			"fieldtype": "Data",
+			"label": "Branch Code",
+			"length": 3,
+			"read_only": 1,
+			"reqd": 1
+		},
+		{
+			"fieldname": "currency",
+			"fieldtype": "Data",
+			"label": "Currency",
+			"length": 3,
+			"read_only": 1,
+			"reqd": 1
+		},
+		{
+			"fieldname": "column_break_core_1",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "cbs_reference",
+			"fieldtype": "Data",
+			"in_standard_filter": 1,
+			"label": "CBS Reference",
+			"length": 16,
+			"read_only": 1,
+			"reqd": 1
+		},
+		{
+			"fieldname": "cbs_module",
+			"fieldtype": "Data",
+			"label": "CBS Module",
+			"length": 2,
+			"read_only": 1,
+			"reqd": 1
+		},
+		{
+			"fieldname": "financial_year",
+			"fieldtype": "Data",
+			"label": "Financial Year",
+			"length": 6,
+			"read_only": 1,
+			"reqd": 1
+		},
+		{
+			"fieldname": "column_break_core_2",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "serial_number",
+			"fieldtype": "Data",
+			"label": "Serial Number",
+			"length": 15,
+			"read_only": 1,
+			"reqd": 1
+		},
+		{
+			"fieldname": "transaction_code",
+			"fieldtype": "Data",
+			"label": "Transaction Code",
+			"length": 3,
+			"read_only": 1,
+			"reqd": 1
+		},
+		{
+			"fieldname": "transaction_description",
+			"fieldtype": "Small Text",
+			"label": "Transaction Description",
+			"reqd": 1
+		},
+		{
+			"fieldname": "section_dates",
+			"fieldtype": "Section Break",
+			"label": "Dates & Rates"
+		},
+		{
+			"fieldname": "transaction_date",
+			"fieldtype": "Date",
+			"in_standard_filter": 1,
+			"label": "Transaction Date",
+			"read_only": 1,
+			"reqd": 1
+		},
+		{
+			"fieldname": "value_date",
+			"fieldtype": "Date",
+			"label": "Value Date",
+			"read_only": 1,
+			"reqd": 1
+		},
+		{
+			"fieldname": "column_break_dates_1",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "exchange_rate",
+			"fieldtype": "Float",
+			"label": "Exchange Rate",
+			"read_only": 1,
+			"reqd": 1
+		},
+		{
+			"fieldname": "available_balance",
+			"fieldtype": "Currency",
+			"label": "Available Balance",
+			"read_only": 1,
+			"reqd": 1
+		},
+		{
+			"collapsible": 1,
+			"fieldname": "section_customer",
+			"fieldtype": "Section Break",
+			"label": "DTB Customer Details"
+		},
+		{
+			"fieldname": "customer_name",
+			"fieldtype": "Data",
+			"label": "Customer Name (DTB)",
+			"length": 128,
+			"read_only": 1
+		},
+		{
+			"fieldname": "customer_mobile",
+			"fieldtype": "Data",
+			"label": "Customer Mobile (DTB)",
+			"length": 30,
+			"read_only": 1
+		},
+		{
+			"fieldname": "column_break_cust_1",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "virtual_pan",
+			"fieldtype": "Data",
+			"label": "Virtual PAN",
+			"length": 16,
+			"read_only": 1
+		},
+		{
+			"fieldname": "rrn",
+			"fieldtype": "Data",
+			"label": "RRN",
+			"length": 12,
+			"read_only": 1
+		},
+		{
+			"fieldname": "section_narration",
+			"fieldtype": "Section Break",
+			"label": "Narration"
+		},
+		{
+			"fieldname": "narration",
+			"fieldtype": "Small Text",
+			"label": "Narration",
+			"read_only": 1,
+			"reqd": 1
+		}
+	],
+	"is_submittable": 1,
+	"links": [],
+	"modified": "2026-06-24 00:00:00.000000",
+	"modified_by": "Administrator",
+	"module": "DTB",
+	"name": "DTB IPN Transaction",
+	"owner": "Administrator",
+	"permissions": [
+		{
+			"create": 1,
+			"delete": 1,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "System Manager",
+			"share": 1,
+			"submit": 1,
+			"write": 1
+		}
+	],
+	"row_format": "Dynamic",
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"states": []
+}

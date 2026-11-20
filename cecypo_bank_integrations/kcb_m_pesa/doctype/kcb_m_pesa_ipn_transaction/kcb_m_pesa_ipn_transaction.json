@@ -1,0 +1,417 @@
+{
+	"actions": [],
+	"allow_rename": 0,
+	"autoname": "KCB-MPESA-.YYYY.-.#####",
+	"creation": "2026-07-05 00:00:00.000000",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"section_txn",
+		"transaction_id",
+		"transaction_type",
+		"status",
+		"column_break_txn_1",
+		"signature_verified",
+		"received_at",
+		"raw_payload",
+		"section_amount",
+		"amount",
+		"currency",
+		"column_break_amt_1",
+		"transaction_date",
+		"narration",
+		"section_sender",
+		"customer_name",
+		"customer_mobile",
+		"column_break_sender_1",
+		"customer_reference",
+		"debit_msisdn",
+		"section_meta",
+		"message_id",
+		"originator_conversation_id",
+		"channel_code",
+		"column_break_meta_1",
+		"business_key",
+		"business_key_type",
+		"credit_account_identifier",
+		"column_break_meta_2",
+		"organization_short_code",
+		"till_number",
+		"balance",
+		"transaction_reference",
+		"section_stk_link",
+		"stk_push_request",
+		"checkout_request_id",
+		"section_erp",
+		"payment_type",
+		"party_type",
+		"party",
+		"column_break_erp_1",
+		"company",
+		"paid_to_account",
+		"paid_from_account",
+		"column_break_erp_2",
+		"cost_center",
+		"project",
+		"submit_payment",
+		"remarks",
+		"section_output",
+		"payment_entry",
+		"amended_from"
+	],
+	"fields": [
+		{
+			"fieldname": "section_txn",
+			"fieldtype": "Section Break",
+			"label": "Transaction Info"
+		},
+		{
+			"fieldname": "transaction_id",
+			"fieldtype": "Data",
+			"in_list_view": 1,
+			"label": "Transaction ID",
+			"read_only": 1,
+			"reqd": 1,
+			"unique": 1
+		},
+		{
+			"fieldname": "transaction_type",
+			"fieldtype": "Select",
+			"in_list_view": 1,
+			"in_standard_filter": 1,
+			"label": "Transaction Type",
+			"options": "Till IPN\nAccount IPN\nSTK Push Callback",
+			"read_only": 1,
+			"reqd": 1
+		},
+		{
+			"default": "Received",
+			"fieldname": "status",
+			"fieldtype": "Select",
+			"in_list_view": 1,
+			"in_standard_filter": 1,
+			"label": "Status",
+			"options": "Received\nValidated\nLinked\nPayment Created\nFailed",
+			"read_only": 1
+		},
+		{
+			"fieldname": "column_break_txn_1",
+			"fieldtype": "Column Break"
+		},
+		{
+			"default": "0",
+			"fieldname": "signature_verified",
+			"fieldtype": "Check",
+			"label": "Signature Verified",
+			"read_only": 1
+		},
+		{
+			"fieldname": "received_at",
+			"fieldtype": "Datetime",
+			"label": "Received At",
+			"read_only": 1
+		},
+		{
+			"collapsible": 1,
+			"fieldname": "raw_payload",
+			"fieldtype": "Long Text",
+			"label": "Raw Payload",
+			"read_only": 1
+		},
+		{
+			"fieldname": "section_amount",
+			"fieldtype": "Section Break",
+			"label": "Amount & Currency"
+		},
+		{
+			"fieldname": "amount",
+			"fieldtype": "Currency",
+			"in_list_view": 1,
+			"label": "Amount",
+			"read_only": 1,
+			"reqd": 1
+		},
+		{
+			"default": "KES",
+			"fieldname": "currency",
+			"fieldtype": "Link",
+			"label": "Currency",
+			"options": "Currency",
+			"read_only": 1,
+			"reqd": 1
+		},
+		{
+			"fieldname": "column_break_amt_1",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "transaction_date",
+			"fieldtype": "Datetime",
+			"label": "Transaction Date",
+			"read_only": 1
+		},
+		{
+			"fieldname": "narration",
+			"fieldtype": "Small Text",
+			"label": "Narration",
+			"read_only": 1
+		},
+		{
+			"collapsible": 1,
+			"fieldname": "section_sender",
+			"fieldtype": "Section Break",
+			"label": "Sender Info"
+		},
+		{
+			"fieldname": "customer_name",
+			"fieldtype": "Data",
+			"label": "Customer Name (KCB)",
+			"read_only": 1
+		},
+		{
+			"fieldname": "customer_mobile",
+			"fieldtype": "Data",
+			"label": "Customer Mobile (KCB)",
+			"read_only": 1
+		},
+		{
+			"fieldname": "column_break_sender_1",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "customer_reference",
+			"fieldtype": "Data",
+			"label": "Customer Reference",
+			"read_only": 1
+		},
+		{
+			"fieldname": "debit_msisdn",
+			"fieldtype": "Data",
+			"label": "Debit MSISDN",
+			"read_only": 1
+		},
+		{
+			"collapsible": 1,
+			"fieldname": "section_meta",
+			"fieldtype": "Section Break",
+			"label": "KCB Metadata"
+		},
+		{
+			"fieldname": "message_id",
+			"fieldtype": "Data",
+			"label": "Message ID",
+			"read_only": 1
+		},
+		{
+			"fieldname": "originator_conversation_id",
+			"fieldtype": "Data",
+			"label": "Originator Conversation ID",
+			"read_only": 1
+		},
+		{
+			"fieldname": "channel_code",
+			"fieldtype": "Data",
+			"label": "Channel Code",
+			"read_only": 1
+		},
+		{
+			"fieldname": "column_break_meta_1",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "business_key",
+			"fieldtype": "Data",
+			"label": "Business Key",
+			"read_only": 1
+		},
+		{
+			"fieldname": "business_key_type",
+			"fieldtype": "Data",
+			"label": "Business Key Type",
+			"read_only": 1
+		},
+		{
+			"fieldname": "credit_account_identifier",
+			"fieldtype": "Data",
+			"label": "Credit Account Identifier",
+			"read_only": 1
+		},
+		{
+			"fieldname": "column_break_meta_2",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "organization_short_code",
+			"fieldtype": "Data",
+			"label": "Organization Short Code",
+			"read_only": 1
+		},
+		{
+			"fieldname": "till_number",
+			"fieldtype": "Data",
+			"in_standard_filter": 1,
+			"label": "Till Number",
+			"read_only": 1
+		},
+		{
+			"fieldname": "balance",
+			"fieldtype": "Currency",
+			"label": "Balance",
+			"read_only": 1
+		},
+		{
+			"fieldname": "transaction_reference",
+			"fieldtype": "Data",
+			"in_standard_filter": 1,
+			"label": "Transaction Reference",
+			"read_only": 1
+		},
+		{
+			"collapsible": 1,
+			"fieldname": "section_stk_link",
+			"fieldtype": "Section Break",
+			"label": "STK Push Link"
+		},
+		{
+			"fieldname": "stk_push_request",
+			"fieldtype": "Link",
+			"label": "STK Push Request",
+			"options": "KCB M-Pesa STK Push Request",
+			"read_only": 1
+		},
+		{
+			"fieldname": "checkout_request_id",
+			"fieldtype": "Data",
+			"label": "Checkout Request ID",
+			"read_only": 1
+		},
+		{
+			"fieldname": "section_erp",
+			"fieldtype": "Section Break",
+			"label": "ERPNext Linkage"
+		},
+		{
+			"default": "Receive",
+			"fieldname": "payment_type",
+			"fieldtype": "Select",
+			"label": "Payment Type",
+			"options": "Receive\nPay\nInternal Transfer",
+			"reqd": 1
+		},
+		{
+			"depends_on": "eval:doc.payment_type!='Internal Transfer'",
+			"fieldname": "party_type",
+			"fieldtype": "Select",
+			"label": "Party Type",
+			"options": "\nCustomer\nSupplier"
+		},
+		{
+			"depends_on": "eval:doc.payment_type!='Internal Transfer'",
+			"fieldname": "party",
+			"fieldtype": "Dynamic Link",
+			"label": "Party",
+			"options": "party_type"
+		},
+		{
+			"fieldname": "column_break_erp_1",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "company",
+			"fieldtype": "Link",
+			"in_standard_filter": 1,
+			"label": "Company",
+			"options": "Company"
+		},
+		{
+			"fieldname": "paid_to_account",
+			"fieldtype": "Link",
+			"label": "Paid To Account (Bank)",
+			"link_filters": "[[\"Account\",\"account_type\",\"=\",\"Bank\"]]",
+			"options": "Account"
+		},
+		{
+			"depends_on": "eval:doc.payment_type=='Internal Transfer'",
+			"fieldname": "paid_from_account",
+			"fieldtype": "Link",
+			"label": "Paid From Account (Bank)",
+			"link_filters": "[[\"Account\",\"account_type\",\"=\",\"Bank\"]]",
+			"options": "Account"
+		},
+		{
+			"fieldname": "column_break_erp_2",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "cost_center",
+			"fieldtype": "Link",
+			"label": "Cost Center",
+			"options": "Cost Center"
+		},
+		{
+			"fieldname": "project",
+			"fieldtype": "Link",
+			"label": "Project",
+			"options": "Project"
+		},
+		{
+			"default": "0",
+			"fieldname": "submit_payment",
+			"fieldtype": "Check",
+			"label": "Auto-Submit Payment Entry"
+		},
+		{
+			"fieldname": "remarks",
+			"fieldtype": "Small Text",
+			"label": "Remarks"
+		},
+		{
+			"fieldname": "section_output",
+			"fieldtype": "Section Break",
+			"label": "Payment Entry Output"
+		},
+		{
+			"fieldname": "payment_entry",
+			"fieldtype": "Link",
+			"label": "Payment Entry",
+			"options": "Payment Entry",
+			"read_only": 1
+		},
+		{
+			"fieldname": "amended_from",
+			"fieldtype": "Link",
+			"label": "Amended From",
+			"no_copy": 1,
+			"options": "KCB M-Pesa IPN Transaction",
+			"print_hide": 1,
+			"read_only": 1,
+			"search_index": 1
+		}
+	],
+	"is_submittable": 1,
+	"links": [],
+	"modified": "2026-07-05 00:00:00.000000",
+	"modified_by": "Administrator",
+	"module": "KCB M-Pesa",
+	"name": "KCB M-Pesa IPN Transaction",
+	"owner": "Administrator",
+	"permissions": [
+		{
+			"create": 1,
+			"delete": 1,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "System Manager",
+			"share": 1,
+			"submit": 1,
+			"write": 1
+		}
+	],
+	"row_format": "Dynamic",
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"states": []
+}
