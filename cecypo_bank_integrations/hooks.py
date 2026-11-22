@@ -251,5 +251,3 @@ after_request = ["cecypo_bank_integrations.utils.request_hooks.after_request"]
 # ignore_translatable_strings_from = []
 
 
-after_install = "cecypo_bank_integrations.sms_payments.ensure_role"
-after_migrate = ["cecypo_bank_integrations.sms_payments.ensure_role"]

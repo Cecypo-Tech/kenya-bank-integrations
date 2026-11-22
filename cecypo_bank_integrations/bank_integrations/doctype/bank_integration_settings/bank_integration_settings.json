@@ -31,11 +31,7 @@
 		"section_kcb_security",
 		"kcb_public_key",
 		"section_kcb_mappings",
-		"kcb_mpesa_account_mappings",
-		"section_sms",
-		"sms_enabled",
-		"sms_extra_senders",
-		"sms_backfill_days"
+		"kcb_mpesa_account_mappings"
 	],
 	"fields": [
 		{
@@ -60,7 +56,7 @@
 		{
 			"fieldname": "im_bank_payment_type_mappings",
 			"fieldtype": "Table",
-			"label": "Payment Type \u2192 Mode of Payment",
+			"label": "Payment Type → Mode of Payment",
 			"options": "IM Bank Payment Type Mapping"
 		},
 		{
@@ -77,7 +73,7 @@
 		{
 			"fieldname": "dtb_cbs_module_mappings",
 			"fieldtype": "Table",
-			"label": "CBS Module \u2192 Mode of Payment",
+			"label": "CBS Module → Mode of Payment",
 			"options": "DTB CBS Module Mapping"
 		},
 		{
@@ -188,34 +184,11 @@
 			"fieldtype": "Table",
 			"label": "KCB M-Pesa Account Mappings",
 			"options": "KCB M-Pesa Account Mapping"
-		},
-		{
-			"fieldname": "section_sms",
-			"fieldtype": "Tab Break",
-			"label": "SMS"
-		},
-		{
-			"fieldname": "sms_enabled",
-			"fieldtype": "Check",
-			"label": "Enable SMS Payments",
-			"default": "0"
-		},
-		{
-			"fieldname": "sms_extra_senders",
-			"fieldtype": "Small Text",
-			"label": "Extra Watched Senders",
-			"description": "One sender per line, in addition to the senders of enabled SMS Rules."
-		},
-		{
-			"fieldname": "sms_backfill_days",
-			"fieldtype": "Int",
-			"label": "Backfill Days",
-			"default": "3"
 		}
 	],
 	"issingle": 1,
 	"links": [],
-	"modified": "2026-07-05 18:00:00.000000",
+	"modified": "2026-11-22 12:00:00.000000",
 	"modified_by": "Administrator",
 	"module": "Bank Integrations",
 	"name": "Bank Integration Settings",

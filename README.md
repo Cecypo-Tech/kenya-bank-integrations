@@ -1,12 +1,14 @@
 ### Kenya Bank Integrations for ERPNext
 
-A Frappe app (`cecypo_bank_integrations`) that brings Kenyan bank and M-Pesa payments into ERPNext:
+A Frappe app (`cecypo_bank_integrations`) that brings Kenyan bank payment APIs into ERPNext:
 
 - **I&M Bank** – Business Connect collections and M-Pesa Push (documented below).
 - **KCB M-Pesa (BUNI)** – payment notifications and Payment Entry creation.
 - **DTB** – IPN payment notifications.
-- **SMS Payments** – records payments from forwarded M-Pesa and bank SMS, using
-  [SMS Payments Bridge](https://github.com/Cecypo-Tech/sms-payments-bridge) on an Android phone.
+
+Looking for SMS Payments (recording payments from M-Pesa and bank SMS)? It has moved to its own app,
+which works without this one: [SMS Payments Bridge](https://github.com/Cecypo-Tech/sms-payments-bridge)
+holds both the ERPNext app and the Android phone app.
 
 ### Installation
 
